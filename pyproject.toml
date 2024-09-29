@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "tradehub"
+version = "0.0.0"
+description = "Trading platform"
+authors = ["asuiah <liweilong@sea.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+broker = { path = "libs/broker" }
+strategies = { path = "libs/strategies" }
+yfinance = "^0.2.40"
+pandas = "^2.2.2"
+moomoo-api = "^8.5.4508"
+pre-commit = "^3.8.0"
+numpy = "~1.26.4"
+# matplotlib = "^3.9.2"
+# pyfolio = "^0.9.2"
+# statsmodels = "0.14.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
