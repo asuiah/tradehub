@@ -23,3 +23,7 @@ class HttpErrorCode:
     BAD_REQUEST = 400
     FORBIDDEN = 403
     INTERNAL_ERROR = 500
+
+class RET_CODE:
+    RET_OK = 0
+    RET_ERROR = -1
