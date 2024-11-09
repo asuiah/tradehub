@@ -32,16 +32,16 @@ jobs:
             cache-dependency-path: website/pnpm-lock.yaml
         - name: Setup Pages
           uses: actions/configure-pages@v5
-        - name: Upload artifact
-          uses: actions/upload-pages-artifact@v3
-          with:
-          path: 'website/build'
         - name: Install dependencies
           working-directory: ./website
           run:  pnpm install
         - name: Build website
           run: pnpm build
           working-directory: ./website
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: 'website/build'
 
 
   deploy:
