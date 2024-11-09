@@ -42,6 +42,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          working-directory: ./website
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # 构建生成的文件目录
+          publish_dir: ./website/build  # 构建生成的文件目录
