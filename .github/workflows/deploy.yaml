@@ -7,9 +7,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
-  page: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: website-deployment-${{ github.ref }}
@@ -30,11 +28,13 @@ jobs:
             node-version: 18.x
             cache: pnpm
         - name: Install dependencies
-          working-directory: ./website
+          with:
+            working-directory: ./website
           run:  pnpm install
         - name: Build website
-          working-directory: ./website
           run: pnpm build
+          with:
+            working-directory: ./website
 
   deploy:
     needs: build
@@ -42,7 +42,8 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: ./website
+        with:
+            working-directory: ./website
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build  # 构建生成的文件目录
