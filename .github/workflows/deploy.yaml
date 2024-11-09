@@ -8,8 +8,8 @@ on:
 
 permissions:
   contents: read
-  page:write
-  id-token:write
+  page: write
+  id-token: write
 
 concurrency:
   group: website-deployment-${{ github.ref }}
